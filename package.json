@@ -1,0 +1,59 @@
+{
+  "name": "kayip-cocuk-app",
+  "version": "0.1.0",
+  "private": true,
+
+  "engines": {
+    "node": ">=14.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
+  },
+  "scripts": {
+    "commit": "git add --all && git commit -m \"feat: $COMMIT\" && git push origin",
+    "update": "git fetch && git pull upstream main",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "build": "npm run partytown && next build",
+    "partytown": "partytown copylib public/~partytown",
+    "start": "next start",
+    "lint": "next lint --max-warnings=0",
+    "lint:fix": "next lint --fix",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@next/font": "13.1.6",
+    "@types/node": "18.13.0",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
+    "next": "13.1.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.5",
+    "@builder.io/partytown": "^0.7.5",
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest"
+   
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@types/leaflet": "^1.9.0",
+    "@types/leaflet.markercluster": "^1.5.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "msw": "^1.0.0",
+    "prettier": "^2.8.3"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  }
+}
