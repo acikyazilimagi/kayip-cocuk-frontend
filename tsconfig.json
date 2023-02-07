@@ -19,14 +19,10 @@
         "name": "next"
       }
     ],
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"],
-      "@/utils":["./utils/*"],
-      "@/components": ["./components/*"],
-      "@/pages": ["./pages/*"],
-      "@/styles": ["./styles/*"],
-      "@/hooks": ["./hooks/*"],
+
 
     }
   },
