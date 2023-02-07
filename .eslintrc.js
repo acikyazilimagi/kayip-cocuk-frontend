@@ -1,0 +1,65 @@
+const rules = {
+  'arrow-body-style': ['error', 'as-needed'],
+  'no-console': 'error',
+  'no-unused-vars': [
+    'error',
+    {
+      args: 'all',
+      argsIgnorePattern: '_',
+    },
+  ],
+  'no-useless-return': 'error',
+  'no-var': 'error',
+  'no-implicit-globals': 'error',
+  'react-hooks/exhaustive-deps': ['error'],
+  'react-hooks/rules-of-hooks': 'error',
+  'unicorn/no-abusive-eslint-disable': 'error',
+  'react/jsx-uses-react': 'off',
+  'react/react-in-jsx-scope': 'off',
+  'react/jsx-no-useless-fragment': 'error',
+  'import/no-useless-path-segments': 'error',
+  'no-only-tests/no-only-tests': 'error',
+  'import/no-duplicates': 'error',
+  'import/no-extraneous-dependencies': 'error',
+  'import/order': 'error',
+  'react/jsx-boolean-value': 'error',
+  'react/jsx-curly-brace-presence': ['error', { props: 'never', children: 'never' }],
+  'react/jsx-fragments': ['error', 'syntax'],
+  curly: ['error', 'all'],
+};
+
+module.exports = {
+  extends: [
+    'react-app',
+    'react-app/jest',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:jsx-a11y/recommended',
+    'plugin:chai-friendly/recommended',
+    'prettier',
+  ],
+  plugins: ['react-hooks', 'import', 'jsx-a11y', 'unicorn', 'prefer-arrow', 'no-only-tests', 'chai-friendly'],
+  rules,
+  overrides: [
+    {
+      files: ['**/*.ts?(x)'],
+      extends: [
+        'react-app',
+        'react-app/jest',
+        'plugin:import/errors',
+        'plugin:import/warnings',
+        'plugin:import/typescript',
+        'plugin:jsx-a11y/recommended',
+        'plugin:chai-friendly/recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier',
+      ],
+      rules: {
+        ...rules,
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': ['error'],
+        // '@typescript-eslint/no-explicit-any': 'off',
+      },
+    },
+  ],
+};
